@@ -6,13 +6,13 @@ const messageSchema = new Schema({
     ref: 'Chat', 
     required: true 
   },
-  question: { 
+  user: { 
     type: String, 
     required: true 
   },
-  answer: { 
+  bot: { 
     type: String, 
-    required: true 
+    required: false //change it later 
   },
   timestamp: { 
     type: Date, 

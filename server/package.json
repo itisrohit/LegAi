@@ -24,6 +24,9 @@
     "http": "^0.0.1-security",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.7",
+    "natural": "^8.0.1",
+    "node-nlp": "^5.0.0-alpha.5",
+    "node-schedule": "^2.1.1",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0"
   }
