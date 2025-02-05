@@ -5,11 +5,8 @@ const cors = require('cors');
 const passport = require('passport');
 const session = require('express-session');
 require('./config/passport.js');
-const { authenticate } = require('./middlewares/auth.middleware.js');
-
-// Load environment variables
-// require('dotenv').config();
-
+const { authenticate } = require('./middlewares/authMiddleware.js');
+const corev1Router = require('./routes/core-v1/botChatRoute.js');
 
 // Middleware Configuration
 app.use(express.json({ limit: '16kb' }));
@@ -35,24 +32,22 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-
 // Route Configuration
-const userRouter = require('./routes/user.routes.js');
-const chatRouter = require('./routes/chat.routes.js');
-const logoutRoute = require('./routes/logout.route.js');
-const messageRouter = require('./routes/message.routes.js');
+const userRouter = require('./routes/userRoutes.js');
+const chatRouter = require('./routes/chatRoutes.js');
+const logoutRoute = require('./routes/logoutRoute.js');
+const messageRouter = require('./routes/messageRoutes.js');
 
 // API routes
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/chats', chatRouter);
 app.use('/api/v1/logout', logoutRoute);
 app.use('/api/v1/messages', messageRouter);
+app.use('/api/v1/chat', corev1Router);
 
 // Public Route 
 app.get('/', (req, res) => {
   res.send('This API is working');
 });
-
 
 module.exports = { app };

@@ -4,7 +4,7 @@ const {
   getChatsForUser, 
   getMessagesForChat, 
   deleteChat 
-} = require('../controllers/chat.controller');
+} = require('../controllers/chatController');
 
 const router = express.Router();
 
