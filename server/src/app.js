@@ -5,7 +5,7 @@ const cors = require('cors');
 const passport = require('passport');
 const session = require('express-session');
 require('./config/passport.js');
-const { User } = require('./models/user.model.js');
+const { authenticate } = require('./middlewares/auth.middleware.js');
 
 // Load environment variables
 // require('dotenv').config();
@@ -39,9 +39,15 @@ app.use(passport.session());
 
 // Route Configuration
 const userRouter = require('./routes/user.routes.js');
+const chatRouter = require('./routes/chat.routes.js');
+const logoutRoute = require('./routes/logout.route.js');
+const messageRouter = require('./routes/message.routes.js');
 
 // API routes
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/chats', chatRouter);
+app.use('/api/v1/logout', logoutRoute);
+app.use('/api/v1/messages', messageRouter);
 
 // Public Route 
 app.get('/', (req, res) => {
