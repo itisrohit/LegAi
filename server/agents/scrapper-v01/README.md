@@ -1,4 +1,4 @@
-# AI Agents v01
+# Scrapper-V01
 
 ## NPM Packages Used
 
@@ -30,13 +30,13 @@ INDIAN_KANOON_API_TOKEN=
 
 ## Installation
 
-To install the dependencies and dev dependencies, run the following commands:
+To install the dependencies and dev dependencies manually, run the following commands:
    ```sh
    npm i @huggingface/inference dotenv node-fetch sanitize-html
    npm i npm-run-all --save-dev
    ```
 
-To install the dependencies and dev dependencies, run the following command:
+To install the dependencies and dev dependencies at once, run the following command:
    ```sh
    npm install
    ```
