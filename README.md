@@ -12,7 +12,30 @@ LegAi is an AI-powered legal advice assistant built for the AI Hackathon. It hel
 - **Backend**: Node.js
 - **AI Models**: LLM-based NLP models
 - **Database**: MongoDB
-- **Frontend**: React 
+- **Frontend**: React
+
+## Problem 
+
+Legal help is often expensive, slow, and hard to understand, with many people struggling to grasp legal terms, locate the right laws, and prepare legal documents. Hiring a lawyer is not always affordable, and getting legal advice can take time. In India, many people, especially in rural and backward areas are unaware of their legal rights and laws, leaving them vulnerable to legal issues and exploitation.
+
+## Solution
+
+Our website is an AI-based legal assistant that makes legal help quick, easy, and affordable. Users can type in their legal questions or issues, and our system provides simple, clear answers along with guidance on what to do next. The tool helps find the right laws. By using modern technology like artificial intelligence and natural language processing, we break down complex legal language into simple terms, making legal information accessible to everyone. This is especially valuable for people in rural and backward areas of India who may not know their legal rights and cannot easily access traditional legal help.
+
+## AI Models Used
+
+- Search
+- Classification
+- Extraction
+- Generation
+
+## Team Members
+
+- Rohit [ github link :- https://github.com/itisrohit/LegAi ]
+- Diya
+- Mohan
+- Nishat
+- Nithin
 
 ## Getting Started
 1. Clone the repository:
@@ -22,11 +45,11 @@ LegAi is an AI-powered legal advice assistant built for the AI Hackathon. It hel
    ```
 2. Install dependencies:
    ```sh
-   pnpm install
+   npm install
    ```
 3. Start the server:
    ```sh
-   pnpm start
+   npm start
    ```
 
 ## Contribution
