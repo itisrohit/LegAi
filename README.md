@@ -29,6 +29,14 @@ Our website is an AI-based legal assistant that makes legal help quick, easy, an
 - Extraction
 - Generation
 
+## Figma Link 
+
+https://www.figma.com/design/G3m2sfcM7gdepNcfwBAytv/AI-Prototyping?node-id=0-1&p=f&t=md81dX8oHytgNn1c-0
+
+## Prototype Link
+
+https://www.figma.com/proto/G3m2sfcM7gdepNcfwBAytv/AI-Prototyping?node-id=0-1&t=PKOmx0SHub6OrPpZ-1 
+
 ## Team Members
 
 - Rohit [ github link :- https://github.com/itisrohit/LegAi ]
@@ -41,7 +49,7 @@ Our website is an AI-based legal assistant that makes legal help quick, easy, an
 1. Clone the repository:
    ```sh
    git clone https://github.com/itisrohit/LegAi.git
-   cd legAi
+   cd LegAi
    ```
 2. Install dependencies:
    ```sh
