@@ -41,7 +41,7 @@ Our website is an AI-based legal assistant that makes legal help quick, easy, an
 1. Clone the repository:
    ```sh
    git clone https://github.com/itisrohit/LegAi.git
-   cd legai
+   cd legAi
    ```
 2. Install dependencies:
    ```sh
@@ -49,7 +49,7 @@ Our website is an AI-based legal assistant that makes legal help quick, easy, an
    ```
 3. Start the server:
    ```sh
-   npm start
+   npm run dev
    ```
 
 ## Contribution
