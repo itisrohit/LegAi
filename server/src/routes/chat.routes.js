@@ -12,7 +12,7 @@ const router = express.Router();
 router.post('/create', createChat);
 
 // Route to get all chats for a user (GET /api/v1/chats/:userId)
-router.get('/:userId', getChatsForUser);
+router.get('/list', getChatsForUser);
 
 // Route to get all messages for a chat (GET /api/v1/chats/messages/:chatId)
 router.get('/messages/:chatId', getMessagesForChat);

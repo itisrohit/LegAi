@@ -6,7 +6,7 @@ const messageSchema = new Schema({
     ref: 'Chat', 
     required: true 
   },
-  question: { 
+  query: { 
     type: String, 
     required: true 
   },

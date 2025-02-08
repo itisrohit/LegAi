@@ -6,14 +6,14 @@ const { Chat } = require("../models/chat.model");
 exports.addMessageToChat = async (req, res) => {
   try {
     const { chatId } = req.params;
-    const { question, answer } = req.body;
+    const { query, answer } = req.body;
 
-    if (!question || !answer) {
+    if (!query || !answer) {
       return res.status(400).json({ message: "Both question and answer are required" });
     }
 
     // Create and save the new message document (linked to the chat)
-    const newMessage = new Message({ chatId, question, answer });
+    const newMessage = new Message({ chatId, query, answer });
     await newMessage.save();
 
     // Update the last updated timestamp for the chat

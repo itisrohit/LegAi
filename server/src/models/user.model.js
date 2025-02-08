@@ -17,6 +17,9 @@ const userSchema = new Schema({
     googleId: {
         type: String,
     },
+    accessToken: {
+        type: String,
+    },
 }, {
     timestamps: true
 });

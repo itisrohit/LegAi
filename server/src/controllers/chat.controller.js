@@ -4,9 +4,11 @@ const { Message } = require("../models/message.model");
 // Create a new chat (when user clicks the "+" and provides a title)
 exports.createChat = async (req, res) => {
   try {
-    const { userId, title } = req.body;
-    if (!userId || !title) {
-      return res.status(400).json({ message: "User ID and title are required" });
+    const { title } = req.body;
+    const userId = req.user._id; // Assuming user is authenticated and userId is in the request
+
+    if (!title) {
+      return res.status(400).json({ message: "Title is required" });
     }
 
     const newChat = new Chat({ userId, title });
@@ -19,10 +21,12 @@ exports.createChat = async (req, res) => {
   }
 };
 
+
 // Get all chats for a given user (for sidebar display)
+// Get all chats for the authenticated user (no need for userId in the route)
 exports.getChatsForUser = async (req, res) => {
   try {
-    const { userId } = req.params;
+    const userId = req.user._id; // Get userId from authenticated user
     const chats = await Chat.find({ userId }).sort({ lastUpdated: -1 });
 
     // Optional: format timestamps for display
@@ -38,6 +42,7 @@ exports.getChatsForUser = async (req, res) => {
     console.error("error in getChatsForUser:", error);
   }
 };
+
 
 // Get all messages for a particular chat (to display full chat history)
 exports.getMessagesForChat = async (req, res) => {

@@ -1,0 +1,179 @@
+[
+    {
+      "query": "What is the Right to Information Act in India?",
+      "answer": "The Right to Information Act allows citizens to request information from public authorities, promoting transparency and accountability.",
+      "category": "constitutional"
+    },
+    {
+      "query": "What is dowry harassment under Indian law?",
+      "answer": "Dowry harassment refers to the mistreatment or abuse of a woman by her husband or in-laws, often in connection with dowry demands.",
+      "category": "criminal law"
+    },
+    {
+      "query": "What is the Indian Penal Code (IPC)?",
+      "answer": "The Indian Penal Code is the main criminal code in India, providing definitions of various crimes and punishments.",
+      "category": "criminal law"
+    },
+    {
+      "query": "What are the key provisions of the Indian Contract Act?",
+      "answer": "The Indian Contract Act defines and regulates contracts in India, outlining rules for offer, acceptance, consideration, and breach of contracts.",
+      "category": "contract law"
+    },
+    {
+      "query": "What is intellectual property law?",
+      "answer": "Intellectual property law protects the rights of creators and innovators over their inventions, designs, trademarks, and artistic works.",
+      "category": "intellectual property"
+    },
+    {
+      "query": "What is bail in criminal cases?",
+      "answer": "Bail is the temporary release of an accused person awaiting trial, often under the condition that a sum of money is deposited to ensure the person's appearance in court.",
+      "category": "criminal law"
+    },
+    {
+      "query": "What is the Protection of Women from Domestic Violence Act?",
+      "answer": "This act protects women from domestic violence and provides them with legal remedies, including protection orders and access to shelter.",
+      "category": "family law"
+    },
+    {
+      "query": "What is the role of the judiciary in India?",
+      "answer": "The judiciary in India interprets and upholds the Constitution, resolves legal disputes, and ensures justice is administered impartially.",
+      "category": "constitutional"
+    },
+    {
+      "query": "What is an 'agreement' under Indian law?",
+      "answer": "An agreement under Indian law is a promise or set of promises that the law will enforce, typically involving mutual consent and lawful consideration.",
+      "category": "contract law"
+    },
+    {
+      "query": "What are the laws governing marriage in India?",
+      "answer": "Laws governing marriage in India include the Hindu Marriage Act, Muslim Personal Law, and other community-specific laws, regulating the institution of marriage and divorce.",
+      "category": "family law"
+    },
+    {
+      "query": "What is the Consumer Protection Act in India?",
+      "answer": "The Consumer Protection Act provides a mechanism for consumers to file complaints against manufacturers and service providers regarding unfair trade practices and defective goods.",
+      "category": "consumer law"
+    },
+    {
+        "query": "What is the Right to Education Act in India?",
+        "answer": "The Right to Education Act mandates free and compulsory education for children aged 6 to 14 years in India, ensuring equality in access to education.",
+        "category": "education law"
+    },
+    {
+        "query": "What is Section 377 of the Indian Penal Code?",
+        "answer": "Section 377 of the Indian Penal Code criminalized unnatural sexual offenses, including homosexuality. It was decriminalized by the Supreme Court in 2018.",
+        "category": "criminal law"
+    },
+    {
+        "query": "What is the concept of 'res judicata'?",
+        "answer": "'Res judicata' is a legal principle that prohibits the same matter from being tried again once a court has made a final decision on it.",
+        "category": "civil law"
+    },
+    {
+        "query": "What is a 'power of attorney' in India?",
+        "answer": "A power of attorney is a legal document that authorizes one person to act on behalf of another in legal and financial matters.",
+        "category": "property law"
+    },
+    {
+        "query": "What is the Consumer Protection (E-commerce) Rules, 2020?",
+        "answer": "These rules regulate e-commerce businesses in India, ensuring consumer protection, transparency, and fair trade practices in online transactions.",
+        "category": "consumer law"
+    },
+    {
+        "query": "What is the Insolvency and Bankruptcy Code (IBC)?",
+        "answer": "The Insolvency and Bankruptcy Code provides a framework for the resolution of insolvency and bankruptcy of individuals and companies, facilitating debt recovery and liquidation.",
+        "category": "corporate law"
+    },
+    {
+        "query": "What is the Right to Privacy under Indian law?",
+        "answer": "The Right to Privacy is a fundamental right under the Constitution of India, ensuring that individuals' personal information is protected from unwarranted interference by the state.",
+        "category": "constitutional"
+    },
+    {
+        "query": "What is defamation in Indian law?",
+        "answer": "Defamation in Indian law refers to the act of harming the reputation of an individual by making false and defamatory statements, either spoken or written.",
+        "category": "civil law"
+    },
+    {
+        "query": "What is the Goods and Services Tax (GST) Act?",
+        "answer": "The Goods and Services Tax Act is a comprehensive indirect tax law in India, which levies a single tax on the supply of goods and services.",
+        "category": "tax law"
+    },
+    {
+        "query": "What are the grounds for divorce under Indian law?",
+        "answer": "Grounds for divorce under Indian law include adultery, cruelty, desertion, mental disorder, and conversion to another religion, among others, depending on the personal laws applicable.",
+        "category": "family law"
+    },
+    {
+        "query": "What is an anticipatory bail?",
+        "answer": "Anticipatory bail is a provision under Indian law that allows a person to seek bail in anticipation of arrest for a non-bailable offense.",
+        "category": "criminal law"
+    },
+    {
+        "query": "What is the Securities and Exchange Board of India (SEBI)?",
+        "answer": "The Securities and Exchange Board of India is the regulatory authority for the securities market in India, tasked with protecting investors and promoting market integrity.",
+        "category": "corporate law"
+    },
+    {
+        "query": "What is the Environmental Protection Act?",
+        "answer": "The Environmental Protection Act in India empowers the government to take measures for protecting and improving the environment, regulating hazardous substances and pollution.",
+        "category": "environmental law"
+    },
+    {
+        "query": "What is an FIR (First Information Report) in India?",
+        "answer": "An FIR is a written document prepared by the police when they receive information about the commission of a cognizable offense. It is the first step in the investigation process.",
+        "category": "criminal law"
+    },
+    {
+        "query": "Who can file an FIR in India?",
+        "answer": "An FIR can be filed by any person who has knowledge of the commission of a cognizable offense. It can be done at the nearest police station or online, depending on the jurisdiction.",
+        "category": "criminal law"
+    },
+    {
+        "query": "What is the procedure for filing an FIR?",
+        "answer": "To file an FIR, the complainant must visit the police station, provide details of the offense, and sign the FIR document. The police are then required to register it and initiate an investigation.",
+        "category": "criminal law"
+    },
+    {
+        "query": "Can an FIR be filed without evidence?",
+        "answer": "Yes, an FIR can be filed even if there is no direct evidence at the time. The purpose of the FIR is to initiate an investigation. However, a thorough investigation will be conducted to collect evidence.",
+        "category": "criminal law"
+    },
+    {
+        "query": "What is the difference between a cognizable and non-cognizable offense in relation to FIR?",
+        "answer": "A cognizable offense is one where the police can arrest the accused without a warrant and start an investigation without permission from a court. A non-cognizable offense requires a magistrate's order for arrest and investigation.",
+        "category": "criminal law"
+    },
+    {
+        "query": "Can an FIR be canceled in India?",
+        "answer": "Yes, an FIR can be canceled if the police investigation reveals that the case was false, fabricated, or not cognizable. However, it can only be done with the approval of a magistrate.",
+        "category": "criminal law"
+    },
+    {
+        "query": "What is the time limit for filing an FIR?",
+        "answer": "There is no strict time limit for filing an FIR. However, a delay in filing the FIR may affect the investigation process and the availability of evidence. It's important to report crimes as soon as possible.",
+        "category": "criminal law"
+    },
+    {
+        "query": "What should be included in an FIR?",
+        "answer": "An FIR should include the details of the offense (nature of crime, location, date, and time), the identity of the victim and accused (if known), and a brief description of the incident. It should be signed by the complainant.",
+        "category": "criminal law"
+    },
+    {
+        "query": "Can an FIR be filed online in India?",
+        "answer": "Yes, in some states of India, an FIR can be filed online through the state's police website or the National Crime Records Bureau's portal for certain types of offenses, especially for non-violent crimes.",
+        "category": "criminal law"
+    },
+    {
+        "query": "What happens after an FIR is filed?",
+        "answer": "After an FIR is filed, the police investigate the case, which may include questioning witnesses, collecting evidence, and arresting suspects. If there is sufficient evidence, the case may proceed to trial.",
+        "category": "criminal law"
+    },
+    {
+        "query": "What is the role of a magistrate in the FIR process?",
+        "answer": "A magistrate's role includes approving arrests, reviewing the police investigation, and overseeing the legal process after an FIR is registered. A magistrate can also order the cancellation of an FIR or grant bail.",
+        "category": "criminal law"
+    }
+      
+  ]
+  

@@ -9,24 +9,31 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.GOOGLE_CALLBACK_URL
 }, async (accessToken, refreshToken, profile, done) => {
     try {
-        // console.log('profile: ', profile);
-        // console.log('accessToken: ', accessToken);
-        // console.log('refreshToken: ', refreshToken);
-        
         let user = await User.findOne({ googleId: profile.id });
+
         if (!user) {
+            // First-time user, create new user
             user = new User({
-                email: profile.emails[0].value,  
-                fullname: profile.displayName,  
-                googleId: profile.id,                               
+                email: profile.emails[0].value,
+                fullname: profile.displayName,
+                googleId: profile.id,
+                accessToken: accessToken, // Store the access token for first-time users
             });
+
             await user.save();
+        } else {
+            // Existing user, update their access token (if you want to store it)
+            user.accessToken = accessToken;
+            await user.save();  // Save the updated access token
         }
-        done(null, user, { accessToken, refreshToken });
+
+        done(null, user);  // Proceed with user
     } catch (error) {
         done(error, null);
     }
 }));
+
+
 
 passport.serializeUser((user, done) => {
     done(null, user.id);

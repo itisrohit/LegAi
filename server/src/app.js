@@ -45,9 +45,9 @@ const messageRouter = require('./routes/message.routes.js');
 
 // API routes
 app.use('/api/v1/users', userRouter);
-app.use('/api/v1/chats', chatRouter);
-app.use('/api/v1/logout', logoutRoute);
-app.use('/api/v1/messages', messageRouter);
+app.use('/api/v1/chats', authenticate, chatRouter);
+app.use('/api/v1', authenticate, logoutRoute);
+app.use('/api/v1/messages', authenticate, messageRouter);
 
 // Public Route 
 app.get('/', (req, res) => {
