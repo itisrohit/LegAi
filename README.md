@@ -199,9 +199,6 @@ Example response for an in-scope query:
 
 Contributions are welcome! Please submit issues or pull requests with your suggestions or improvements.
 
-## License
-
-This project is licensed under the MIT License.
 
 ## Repository
 
