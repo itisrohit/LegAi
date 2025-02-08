@@ -46,7 +46,7 @@ Legal help is often expensive, slow, and hard to access—especially in rural ar
 
 ## Our Solution
 
-LegAi Chat App leverages advanced AI techniques and a RAG-based approach to break down complex legal language into clear, actionable insights. Users can type in their legal questions and receive concise, reliable answers along with relevant legal guidance. This approach makes legal information accessible to everyone, particularly those in underserved areas.
+LegAi Chat App leverages advanced AI techniques and a RAG-based approach to break down complex legal language into clear, actionable insights. Users can type in their legal questions and receive concise, reliable answers. This approach makes legal information accessible to everyone, particularly those in underserved areas.
 
 ## AI Models and Use Cases
 
