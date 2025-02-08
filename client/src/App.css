@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 #root {
   padding: 0;
   margin: 0;
@@ -5,4 +7,36 @@
 .app{
   padding: 0;
   margin: 0;
+}
+
+.landing-page{
+  background-image: url(./assets/Landing_Page_Background_Image.png);
+  background-size: cover;
+}
+
+.about-us{
+  background-image: url(./assets/About_Us_component.png);
+  background-size: cover;
+}
+
+.services{
+  background-image: url(./assets/Our_Services_component.png);
+  background-size: cover;
+}
+
+.chat-page{
+  background-image: url(./assets/Background_Components.png);
+  background-size: cover;
+}
+
+.side-panel{
+  background-color: #D0b3b2;
+}
+
+.sent-message{
+  background-color: #D5B1FF;
+}
+
+.ai-msg{
+  background-color: #D1BCBA;
 }

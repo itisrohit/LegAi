@@ -15,7 +15,9 @@ export const { addMessage } = chatSlice.actions;
 
 export const saveMessageToBackend = (chatId, question, answer) => async (dispatch) => {
   try {
-    dispatch(addMessage({ chatId, question, answer })); // Update Redux store first
+    const response = dispatch(addMessage({ chatId, question, answer })); // Update Redux store first
+
+    console.log(response)
 
     await axios.post(`http://localhost:8080/api/v1/messages/${chatId}`, { query: question, answer });
 

@@ -41,9 +41,7 @@ export default function AskQuestionComponent() {
 
       console.log("Question and answer saved successfully!");
     } catch (error) {
-      const ans_data = error.config.data;
-      const ans = JSON.parse(ans_data);
-      console.log("Error during question/answer process:", ans.answer);
+      console.log("Error during question/answer process:", error);
     }
   };
 

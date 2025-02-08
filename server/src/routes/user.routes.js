@@ -24,7 +24,7 @@ router.get('/auth/google/callback', passport.authenticate('google', { failureRed
         });
 
         console.log('Auto-login successful');
-        res.redirect(process.env.CLIENT_URL);
+        res.redirect(`${process.env.CLIENT_URL}/chat`);
     } catch (error) {
         console.error('Error during Google OAuth callback:', error);
         res.redirect('/login');
