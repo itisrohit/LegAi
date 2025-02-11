@@ -9,7 +9,7 @@ const authenticate = async (req, res, next) => {
         
         // If token is not found, respond with unauthorized
         if (!token) {
-            return res.status(401).json({ status: 'fail', message: 'Unauthorized' });
+            return res.redirect('http://localhost:8080');
         }
 
         // Remove the "accessToken=" prefix if it exists

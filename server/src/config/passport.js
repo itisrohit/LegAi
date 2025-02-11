@@ -29,6 +29,7 @@ passport.use(new GoogleStrategy({
 
         done(null, user);  // Proceed with user
     } catch (error) {
+        console.error('Error during Google OAuth callback:', error);
         done(error, null);
     }
 }));

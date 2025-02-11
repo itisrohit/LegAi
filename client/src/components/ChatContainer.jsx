@@ -1,14 +1,22 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import { useParams } from 'react-router-dom'
-import SentMessage from './SentMessage'
-import AiMsg from './AiMsg'
-import InputForm from './InputForm'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import SentMessage from './SentMessage';
+import AiMsg from './AiMsg';
+import { useDispatch } from 'react-redux';
+import { saveMessageToBackend } from '../redux/chatSlice'; 
+import InputForm from './InputForm';
 
 const ChatContainer = () => {
-  const { chatId } = useParams(); // Get chatId from URL
+  const { chatId } = useParams();
   const [messages, setMessages] = useState([]);
-  const accessToken = document.cookie.split(';').find(cookie => cookie.trim().startsWith('accessToken='));
+  const dispatch = useDispatch();
+
+  // Extract accessToken properly
+  const accessToken = document.cookie
+    .split('; ')
+    .find(cookie => cookie.startsWith('accessToken='))
+    ?.split('=')[1];
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -19,9 +27,7 @@ const ChatContainer = () => {
 
       try {
         const response = await axios.get(`http://localhost:8080/api/v1/chats/messages/${chatId}`, {
-          headers: {
-            "Authorization": `Bearer ${accessToken}`
-          }
+          headers: { Authorization: `Bearer ${accessToken}` },
         });
 
         setMessages(response.data);
@@ -31,48 +37,84 @@ const ChatContainer = () => {
     };
 
     fetchMessages();
-  }, [chatId, accessToken]);
+  }, [chatId]); 
 
-  const handleUserInput = (userQuery) => {
-    const predefinedResponses = {
-      "What is an IPC": "Cognizable offenses such as murder or rape allow the police to register an FIR and take immediate action, whereas non-cognizable offenses (like defamation or simple assault) do not require an FIR and usually lead to a police inquiry only after obtaining court permission.",
-    };
-
-    const response = predefinedResponses[userQuery] || "Good afternoon! Hmm, I’m not sure about general of , but I’m always here to help anything regarding to legal quieries! Maybe try asking in a different way?";
-
-    const newMessage = {
-      chatId: messages.length + 1,
-      query: userQuery,
-      answer: response,
-      timestamp: Date.now(),
-    };
-
-    setMessages([...messages, newMessage]);
-
-    setTimeout(() => {
-      setMessages((prevMessages) => prevMessages.map(msg =>
-        msg.chatId === newMessage.chatId ? { ...msg, answer: response } : msg
-      ));
-    }, 5000); // Simulate response delay
+  const handleUserInput = async (question) => {
+    if (!accessToken) {
+      alert('Access Token not found!');
+      return;
+    }
+  
+    // Show user's question immediately
+    setMessages(prevMessages => [
+      ...prevMessages,
+      { query: question, answer: null, timestamp: new Date().toISOString() }
+    ]);
+  
+    try {
+      // Show "Typing..." indicator
+      setMessages(prevMessages => [
+        ...prevMessages,
+        { query: null, answer: "Typing...", timestamp: new Date().toISOString() }
+      ]);
+  
+      // Request answer from bot
+      const response = await axios.post('http://localhost:3000/query', { query: question }, {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      });
+  
+      const botAnswer = response.data.answer;
+  
+      // If the bot didn't give an answer, show an error and exit
+      if (!botAnswer) {
+        setMessages(prevMessages => [
+          ...prevMessages.filter(msg => msg.answer !== "Typing..."),
+          { query: null, answer: "Sorry, I couldn't process your request. Please try again later.", timestamp: new Date().toISOString() }
+        ]);
+        return;
+      }
+  
+      // Remove "Typing..." and add bot response
+      setMessages(prevMessages => [
+        ...prevMessages.filter(msg => msg.answer !== "Typing..."),
+        { query: null, answer: botAnswer, timestamp: new Date().toISOString() }
+      ]);
+  
+      // Save only successful responses to Redux
+      dispatch(saveMessageToBackend(chatId, question, botAnswer));
+  
+      // Save only successful responses to the database
+      await axios.post(`http://localhost:8080/api/v1/messages/${chatId}`, { query: question, answer: botAnswer }, {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      });
+  
+    } catch (error) {
+      console.error('Error sending message:', error);
+  
+      // Remove "Typing..." and show error message
+      setMessages(prevMessages => [
+        ...prevMessages.filter(msg => msg.answer !== "Typing..."),
+        { query: null, answer: "Sorry, I couldn't process your request. Please type your query again", timestamp: new Date().toISOString() }
+      ]);
+    }
   };
 
   return (
     <>
-    
       <div className='absolute ml-100 mt-30 rounded-md w-2/3 h-1/2 overflow-y-auto'>
         <ul>
-          {messages.map(message => (
-            <li key={message.chatId}>
-              <p>{<SentMessage data={message.query}/>}</p>
-              <p>{<AiMsg data={message.answer}/>}</p>
+          {messages.map((message, index) => (
+            <li key={index}>
+              {message.query && <SentMessage data={message.query} />}
+              {message.answer && <AiMsg data={message.answer} />}
               <span>{new Date(message.timestamp).toLocaleString()}</span>
             </li>
           ))}
         </ul>
       </div>
-        <InputForm onSendMessage={handleUserInput} />
+      <InputForm onSendMessage={handleUserInput} />
     </>
-  )
-}
+  );
+};
 
-export default ChatContainer
+export default ChatContainer;

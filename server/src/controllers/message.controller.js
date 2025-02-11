@@ -19,7 +19,7 @@ exports.addMessageToChat = async (req, res) => {
     // Update the last updated timestamp for the chat
     await Chat.findByIdAndUpdate(chatId, { lastUpdated: Date.now() });
 
-    res.status(201).json({ message: "Message added", messageId: newMessage._id });
+    res.status(201).json({ message: "Message added", messageId: newMessage });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

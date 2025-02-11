@@ -4,11 +4,11 @@ import { useDispatch } from 'react-redux';
 import { saveMessageToBackend } from '../redux/chatSlice'; // Action to save message
 import { useParams } from 'react-router-dom';
 
-// Combined function to handle question-answer process and component
 export default function AskQuestionComponent() {
   const { chatId } = useParams(); // Get chatId from URL
-  const accessToken = document.cookie.split(';').find(cookie => cookie.trim().startsWith('accessToken='));
+  const accessToken = document.cookie.split(';').find(cookie => cookie.trim().startsWith('accessToken='))?.split('=')[1];
   const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
   const dispatch = useDispatch(); // Get dispatch function from Redux
 
   const askQuestion = async () => {
@@ -25,19 +25,18 @@ export default function AskQuestionComponent() {
         },
       });
 
-      const answer = response.data.answer;
+      const botAnswer = response.data.answer;
+      setAnswer(botAnswer);
 
       // Step 2: Update Redux with the question-answer pair
-      dispatch(saveMessageToBackend(chatId, question, answer));
+      dispatch(saveMessageToBackend(chatId, question, botAnswer));
 
       // Step 3: Send the question-answer pair to the backend for storage
-      const final =await axios.post(`http://localhost:8080/api/v1/messages/${chatId}`, { query: question, answer }, {
+      await axios.post(`http://localhost:8080/api/v1/messages/${chatId}`, { query: question, answer: botAnswer }, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
       });
-
-      console.log("Final response:", final);
 
       console.log("Question and answer saved successfully!");
     } catch (error) {
@@ -54,6 +53,7 @@ export default function AskQuestionComponent() {
         placeholder="Ask a question" 
       />
       <button onClick={askQuestion}>Ask</button>
+      {answer && <p><strong>Answer:</strong> {answer}</p>}
     </div>
   );
 }
